@@ -120,3 +120,40 @@ TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 BOARD_SEPOLICY_DIRS += device/asus/grouper/sepolicy
+
+TARGET_RECOVERY_UI_LIB := librecovery_ui_grouper
+# TWRP
+#TW_THEME := portrait_hdpi
+#TW_INCLUDE_L_CRYPTO := true
+
+#TWRP config:
+DEVICE_RESOLUTION := 800x1280
+LANDSCAPE_RESOLUTION := 1280x800
+TW_DEFAULT_ROTATION := 0
+BOARD_HAS_NO_REAL_SDCARD := true
+RECOVERY_SDCARD_ON_DATA := true
+TW_NO_USB_STORAGE := true
+TW_INCLUDE_JB_CRYPTO := true
+TW_INTERNAL_STORAGE_PATH := "/data/media"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+TW_EXTERNAL_STORAGE_PATH := "/usb-otg"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "usb-otg"
+TW_BRIGHTNESS_PATH := /sys/devices/platform/pwm-backlight/backlight/pwm-backlight/brightness
+TW_MAX_BRIGHTNESS := 255
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+HAVE_SELINUX := true
+BOARD_CUSTOM_BOOTIMG_MK := device/asus/grouper/custombootimg.mk
+
+#MultiROM config. MultiROM also uses parts of TWRP config
+MR_INPUT_TYPE := type_b
+MR_INIT_DEVICES := device/asus/grouper/mr_init_devices.c
+MR_DPI := hdpi
+MR_DPI_FONT := 216
+MR_FSTAB := device/asus/grouper/twrp.fstab
+MR_KEXEC_MEM_MIN := 0x85000000
+MR_INFOS := device/asus/grouper/mrom_infos
+MR_ENCRYPTION := true
+MR_DEVICE_VARIANTS := tilapia
+MR_DEVICE_HOOKS := device/asus/grouper/mr_hooks.c
+MR_DEVICE_HOOKS_VER := 3
+TARGET_RECOVERY_IS_MULTIROM := true

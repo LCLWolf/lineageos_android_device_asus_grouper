@@ -21,3 +21,5 @@
 # function: add_lunch_combo generic-eng
 
 add_lunch_combo aosp_grouper-userdebug
+add_lunch_combo full_grouper-userdebug
+add_lunch_combo lineage_grouper-userdebug
